@@ -2,7 +2,7 @@
 - Using Sequelize to build db schema and make db queires
 - Using Express router to handle routes
 
-#### Criteria:
+#### Criteria
 - [ ] Create a table using Sequelize, including:
     - Games
         - Result: A string that's either "computer", "human", or "tie"
@@ -35,3 +35,6 @@
         - Rock beats Scissors
         - Create a game with the resulting winner
         - Send the result to the client
+
+#### Next steps
+- Seed DB
