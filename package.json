@@ -1,0 +1,29 @@
+{
+  "name": "fs-wk5-project-roshambo",
+  "version": "1.0.0",
+  "description": "- Using Sequelize to build db schema and make db queires - Using Express router to handle routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackPadalino/FS-Wk5-Project-Roshambo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackPadalino/FS-Wk5-Project-Roshambo/issues"
+  },
+  "homepage": "https://github.com/JackPadalino/FS-Wk5-Project-Roshambo#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "html-template-tag": "^4.0.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "sequelize": "^6.23.1"
+  }
+}
