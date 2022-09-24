@@ -23,7 +23,7 @@
     - username: string representing a username
     - Updates a players name to be the given name
     - HINT: use Postman to test this out
-- EXTRA CREDIT: POST /game
+- [ ] EXTRA CREDIT: POST /game
     - Body:
         - symbol: A players chosen move - either "rock", "paper", or "scissors"
         - playerId: the ID of the player playing the game
