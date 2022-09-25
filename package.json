@@ -4,7 +4,9 @@
   "description": "- Using Sequelize to build db schema and make db queires - Using Express router to handle routes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "seed": "nodemon seed.js"
   },
   "repository": {
     "type": "git",
