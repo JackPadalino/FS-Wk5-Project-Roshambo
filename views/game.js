@@ -1,6 +1,6 @@
 const html=require('html-template-tag');
 
-function game(players){
+function game(players,games){
     return html`
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +18,7 @@ function game(players){
         <label for="player">Player</label>
         <select id="select" name="playerId">
             ${players.map((player) =>
-                `
-                <option value="${player.id}">${player.username}</option>
-                `
+                `<option value="${player.id}">${player.username}</option>`
             )}
         </select>
         <label for="roshambo">Choice</label>
@@ -31,6 +29,10 @@ function game(players){
         </select>
         <button type="submit">Submit</button>
     </form>
+    <h3>Game board</h3>
+    ${games.map((game)=>
+        `<p><b>Player:</b> <a href="/player/${game.player.id}">${game.player.username}</a> <b>Winner:</b> ${game.result}</p>`
+    )}
     </div>
 </body>
 </html>

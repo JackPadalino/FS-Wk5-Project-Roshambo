@@ -15,15 +15,15 @@ function listAllPlayers(players){
     <div id='playersList'>
         <h1>Players</h1>
         ${players.map(player=>
-            `<p>${player.username}</p>`
-            )}
+            `<p><a href="/player/${player.id}">${player.username}</a></p>`
+        )}
     </div>
 </body>
 </html>
 `;
 };
 
-function playerDetails(player,games){
+function playerDetails(player,games,results){
     return html`
 <!DOCTYPE html>
 <html lang="en">
@@ -37,14 +37,12 @@ function playerDetails(player,games){
 <body>
     <div id='playerDetails'>
         <h1>${player.username}</h1>
+        <p><b>Wins:</b> ${results.wins} <b>Losses:</b> ${results.losses}</p>
         <form method="POST" action="/player/${player.id}?_method=PUT">
             <label for="username">New username</label>
             <input type="text" name="username" />
             <button type="submit">Submit</button>
         </form>
-        ${games.map(game=>
-            `<p>Game: ${game.id} | Winner: ${game.result}</p>`
-            )}
     </div>
 </body>
 </html>
