@@ -17,7 +17,11 @@ const{
 router.get('/',async(req,res,next)=>{
     try{
         const players = await Player.findAll();
-        res.send(game(players));
+        const games = await Game.findAll({
+            order:[['createdAt','DESC']],
+            include:Player
+        });
+        res.send(game(players,games));
     }catch(error){
         next(error);
     };
@@ -30,7 +34,7 @@ router.get('/:id',async(req,res,next)=>{
         const player = await Player.findByPk(game.playerId);
         res.send(gameDetails(game,player));
     }catch(error){
-        next(error);
+        next('Oops! Something went wrong!');
     }; 
 });
 
@@ -43,7 +47,7 @@ router.post('/',async(req,res,next)=>{
         result:winner,
         playerId:playerId
     });
-    res.redirect(`/game/${newGame.id}`);
+    res.redirect(`/game`);
 });
 
 module.exports = router;

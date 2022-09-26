@@ -16,7 +16,7 @@ router.get('/',async(req,res,next)=>{
         const players = await Player.findAll();
         res.send(listAllPlayers(players));
     }catch(error){
-        next(error);
+        next('Oops! Something went wrong!');
     };
 });
 
@@ -29,7 +29,20 @@ router.get('/:id',async(req,res,next)=>{
                 playerId:playerId
             }
         });
-        res.send(playerDetails(player,games));
+        const wins = await Game.findAll({
+            where:{
+                playerId:player.id,
+                result:'human'
+            }
+        });
+        const losses = await Game.findAll({
+            where:{
+                playerId:player.id,
+                result:'computer'
+            }
+        });
+        const results = {wins:wins.length,losses:losses.length};
+        res.send(playerDetails(player,games,results));
     }catch(error){
         next(error);
     };
@@ -45,7 +58,7 @@ router.put('/:id',async(req,res,next)=>{
         });
         res.redirect(`/player/${player.id}`)
     }catch(error){
-        next(error);
+        next('Oops! Something went wrong!');
     };
 });
 
