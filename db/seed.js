@@ -26,7 +26,9 @@ const seedDB=async()=>{
 		{result:'human',playerId:jasmine.id},
 	];
     
-    games.forEach(game=>Game.create(game));
+    games.forEach(async(game)=>{
+        return await Game.create(game)
+    });
 };
 
 seedDB();
