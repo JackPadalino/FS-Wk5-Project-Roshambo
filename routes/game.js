@@ -7,19 +7,43 @@ const {
 
 // importing game views
 const{
-    gameDetails
+    game,gameDetails
 }=require('../views/game')
 
-// test route
+const{
+    pickThrow,pickWinner
+} = require('../extras/roshambo');
+
+router.get('/',async(req,res,next)=>{
+    try{
+        const players = await Player.findAll();
+        res.send(game(players));
+    }catch(error){
+        next(error);
+    };
+});
+
 router.get('/:id',async(req,res,next)=>{
     try{
-        const gameID = req.params.id;
-        const game = await Game.findByPk(gameID);
+        const gameId = req.params.id;
+        const game = await Game.findByPk(gameId);
         const player = await Player.findByPk(game.playerId);
         res.send(gameDetails(game,player));
     }catch(error){
-        next('Oops! Something went wrong!');
+        next(error);
     }; 
+});
+
+router.post('/',async(req,res,next)=>{
+    const playerId = req.body.playerId;
+    const humanThrow = req.body.choice;
+    const computerThrow = pickThrow();
+    const winner = pickWinner(humanThrow,computerThrow);
+    const newGame = await Game.create({
+        result:winner,
+        playerId:playerId
+    });
+    res.redirect(`/game/${newGame.id}`);
 });
 
 module.exports = router;
