@@ -23,7 +23,7 @@ function listAllPlayers(players){
 `;
 };
 
-function playerDetails(player,games,results){
+function playerDetails(player,results){
     return html`
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ function playerDetails(player,games,results){
 <body>
     <div id='playerDetails'>
         <h1>${player.username}</h1>
-        <p><b>Wins:</b> ${results.wins} <b>Losses:</b> ${results.losses}</p>
+        <p><b>Games: </b>${results.games} <b>Wins: </b>${results.wins} <b>Losses: </b>${results.losses} <b>Ties: </b>${results.ties}</p>
         <form method="POST" action="/player/${player.id}?_method=PUT">
             <label for="username">New username</label>
             <input type="text" name="username" />

@@ -41,8 +41,9 @@ router.get('/:id',async(req,res,next)=>{
                 result:'computer'
             }
         });
-        const results = {wins:wins.length,losses:losses.length};
-        res.send(playerDetails(player,games,results));
+        const ties = games.length-(wins.length+losses.length);
+        const results = {games:games.length,wins:wins.length,losses:losses.length,ties:ties};
+        res.send(playerDetails(player,results));
     }catch(error){
         next('Oops! Something went wrong!');
     };
