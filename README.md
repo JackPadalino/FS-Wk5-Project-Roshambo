@@ -37,5 +37,4 @@
     - Send the result to the client
 
 #### Next steps
-- Complete extra credit!
 - Experiment with Postman
