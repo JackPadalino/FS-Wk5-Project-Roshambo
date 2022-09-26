@@ -12,6 +12,10 @@ app.use(methodOverride('_method'));
 app.use('/player',playerRouter);
 app.use('/game',gameRouter);
 
+app.get("/", (req, res) => {
+    res.redirect("/game");
+  })
+
 app.listen(PORT,()=>{
     console.log(`Connected to https://localhost:${PORT}...`)
 });
