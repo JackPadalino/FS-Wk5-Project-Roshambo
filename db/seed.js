@@ -24,7 +24,6 @@ const seedDB=async()=>{
 		{result:'tie',playerId: frank.id},
 		{result:'computer',playerId: jack.id},
 		{result:'human',playerId:jasmine.id},
-        {result:'human',playerId:frank.id}
 	];
     
     games.forEach(game=>Game.create(game));
