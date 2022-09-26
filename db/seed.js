@@ -17,6 +17,7 @@ const seedDB=async()=>{
         username:'GoMetz',
     });
 
+    /*
     // creating Game instances
     const games = [
 		{result:'computer',playerId:jack.id},
@@ -29,6 +30,7 @@ const seedDB=async()=>{
     games.forEach(async(game)=>{
         return await Game.create(game)
     });
+    */
 };
 
 seedDB();
