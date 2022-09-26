@@ -23,18 +23,19 @@
     - username: string representing a username
     - Updates a players name to be the given name
     - HINT: use Postman to test this out
-- [ ] EXTRA CREDIT: POST /game
-    - Body:
-        - symbol: A players chosen move - either "rock", "paper", or "scissors"
-        - playerId: the ID of the player playing the game
-    - Does the following:
-        - Pick a random symbol using javascript for the computer
-        - Compare randomly selected move to the users move
-        - Scissors beats paper
-        - Paper beats Rock
-        - Rock beats Scissors
-        - Create a game with the resulting winner
-        - Send the result to the client
+#### EXTRA CREDIT: POST /game
+- Body:
+    - symbol: A players chosen move - either "rock", "paper", or "scissors"
+    - playerId: the ID of the player playing the game
+- Does the following:
+    - Pick a random symbol using javascript for the computer
+    - Compare randomly selected move to the users move
+    - Scissors beats paper
+    - Paper beats Rock
+    - Rock beats Scissors
+    - Create a game with the resulting winner
+    - Send the result to the client
 
 #### Next steps
-- Seed DB
+- Complete extra credit!
+- Experiment with Postman
