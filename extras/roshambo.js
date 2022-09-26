@@ -7,16 +7,12 @@ function pickThrow(){
 
 function pickWinner(humanThrow,computerThrow){
     if(humanThrow===computerThrow) return 'tie';
-    if(humanThrow==='rock'){
-        if(computerThrow==='paper') return 'computer';
-        if(computerThrow==='scissors') return 'human';
-    }else if(humanThrow==='paper'){
-        if(computerThrow==='rock') return 'human';
-        if(computerThrow==='scissors') return 'computer';
-    }else{
-        if(computerThrow==='rock') return 'computer';
-        if(computerThrow==='paper') return 'human';
-    };
+    if(humanThrow==='rock' && computerThrow==='paper') return 'computer';
+    if(humanThrow==='rock' && computerThrow==='scissors') return 'human';
+    if(humanThrow==='paper' && computerThrow==='rock') return 'human';
+    if(humanThrow==='paper' && computerThrow==='scissors') return 'computer';
+    if(humanThrow==='scissors' && computerThrow==='rock') return 'computer';
+    if(humanThrow==='scissors' && computerThrow==='paper') return 'human';
 };
 
 module.exports = {
