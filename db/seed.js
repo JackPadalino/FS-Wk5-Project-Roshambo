@@ -19,12 +19,26 @@ const seedDB=async()=>{
 
     /*
     // creating Game instances
+    await Game.create({
+        result:'computer',
+        playerId:jack.id
+    });
+    await Game.create({
+        result:'human',
+        playerId:jasmine.id
+    });
+    await Game.create({
+        result:'tie',
+        playerId:frank.id
+    });
+    */
+
+    /*
+    // creating Game instances
     const games = [
 		{result:'computer',playerId:jack.id},
 		{result:'human',playerId:jasmine.id},
 		{result:'tie',playerId: frank.id},
-		{result:'computer',playerId: jack.id},
-		{result:'human',playerId:jasmine.id},
 	];
     
     games.forEach(async(game)=>{
