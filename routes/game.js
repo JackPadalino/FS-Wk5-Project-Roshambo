@@ -23,7 +23,7 @@ router.get('/',async(req,res,next)=>{
         });
         res.send(game(players,games));
     }catch(error){
-        next(error);
+        next('Oops! Something went wrong!');
     };
 });
 
@@ -38,7 +38,7 @@ router.get('/:id',async(req,res,next)=>{
     }; 
 });
 
-router.post('/',async(req,res,next)=>{
+router.post('/',async(req,res)=>{
     const playerId = req.body.playerId;
     const humanThrow = req.body.choice;
     const computerThrow = pickThrow();
