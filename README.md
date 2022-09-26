@@ -35,6 +35,3 @@
     - Rock beats Scissors
     - Create a game with the resulting winner
     - Send the result to the client
-
-#### Next steps
-- Experiment with Postman
